@@ -4,6 +4,10 @@
         "config:best-practices",
         "group:recommended"
     ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
     "packageRules": [
         {
             "matchDepTypes": ["devDependencies"],
@@ -12,6 +16,15 @@
         {
             "matchManagers": ["github-actions"],
             "groupName": "GitHub Actions"
+        },
+        {
+            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+            "automerge": true
+        },
+        {
+            "matchUpdateTypes": ["patch"],
+            "matchConfidence": ["very high", "high"],
+            "automerge": true
         }
     ]
 }
