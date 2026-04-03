@@ -20,11 +20,6 @@
         {
             "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
             "automerge": true
-        },
-        {
-            "matchUpdateTypes": ["patch"],
-            "matchConfidence": ["very high", "high"],
-            "automerge": true
         }
     ]
 }
