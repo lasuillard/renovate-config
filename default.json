@@ -18,7 +18,7 @@
             "groupName": "GitHub Actions"
         },
         {
-            "matchUpdateTypes": ["patch", "pin", "digest"],
+            "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
             "automerge": true
         }
     ]
