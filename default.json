@@ -11,7 +11,8 @@
     "packageRules": [
         {
             "matchDepTypes": ["devDependencies"],
-            "groupName": "Dev Dependencies"
+            "groupName": "Dev Dependencies",
+            "automerge": true
         },
         {
             "matchManagers": ["github-actions"],
