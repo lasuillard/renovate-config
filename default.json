@@ -2,21 +2,26 @@
     "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
     "extends": [
         "config:best-practices",
-        "group:recommended"
+        "group:recommended",
+        "schedule:weekly"
     ],
+    "timezone": "Asia/Seoul",
+    "platformAutomerge":  true,
+    "automergeStrategy": "squash",
+    "minimumReleaseAge": "14 days",
     "lockFileMaintenance": {
         "enabled": true,
         "automerge": true
     },
     "packageRules": [
         {
-            "matchDepTypes": ["devDependencies"],
             "groupName": "Dev Dependencies",
+            "matchDepTypes": ["devDependencies"],
             "automerge": true
         },
         {
-            "matchManagers": ["github-actions"],
-            "groupName": "GitHub Actions"
+            "groupName": "GitHub Actions",
+            "matchManagers": ["github-actions"]
         },
         {
             "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
