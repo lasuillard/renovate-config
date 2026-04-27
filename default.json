@@ -3,7 +3,7 @@
     "extends": [
         "config:best-practices",
         "group:recommended",
-        "schedule:weekly"
+        "schedule:monthly"
     ],
     "timezone": "Asia/Seoul",
     "platformAutomerge":  true,
