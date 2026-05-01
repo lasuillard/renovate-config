@@ -3,9 +3,12 @@
     "extends": [
         "config:best-practices",
         "group:recommended",
-        "schedule:monthly"
     ],
     "timezone": "Asia/Seoul",
+    "schedule": [
+        //  In the middle of the month
+        "* 0-3 15 * *"
+    ],
     "platformAutomerge":  true,
     "automergeStrategy": "squash",
     "minimumReleaseAge": "14 days",
