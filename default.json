@@ -3,6 +3,7 @@
     "extends": [
         "config:best-practices",
         "group:recommended",
+        "schedule:automergeWeekdays"
     ],
     "timezone": "Asia/Seoul",
     "schedule": [
@@ -10,9 +11,6 @@
         "* 0-3 15 * *"
     ],
     "platformAutomerge":  false,
-    "automergeSchedule": [
-        "before 4am on monday"
-    ],
     "automergeStrategy": "squash",
     "minimumReleaseAge": "14 days",
     "lockFileMaintenance": {
