@@ -3,7 +3,8 @@
     "extends": [
         "config:best-practices",
         "group:recommended",
-        "schedule:automergeWeekdays"
+        "schedule:automergeWeekdays",
+        "helpers:pinGitHubActionDigestsToSemver"
     ],
     "timezone": "Asia/Seoul",
     "schedule": [
@@ -26,15 +27,7 @@
         {
             "groupName": "GitHub Actions",
             "matchManagers": ["github-actions"],
-            "rangeStrategy": "pin",
-            "pinDigests": true
         },
-        {
-            "groupName": "Docker",
-            "matchManagers": ["dockerfile", "docker-compose"],
-            "rangeStrategy": "pin",
-            "pinDigests": true
-        }
         {
             "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
             "automerge": true
