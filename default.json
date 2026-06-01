@@ -26,11 +26,14 @@
         {
             "groupName": "GitHub Actions",
             "matchManagers": ["github-actions"],
-            "rangeStrategy": "pin"
+            "rangeStrategy": "pin",
+            "pinDigests": true
         },
         {
-            "matchManagers": ["dockerfile"],
-            "rangeStrategy": "pin"
+            "groupName": "Docker",
+            "matchManagers": ["dockerfile", "docker-compose"],
+            "rangeStrategy": "pin",
+            "pinDigests": true
         }
         {
             "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
