@@ -31,6 +31,12 @@
         {
             "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
             "automerge": true
+        },
+        {
+            // Suppress tagless (only latest) image update noise
+            "matchDatasources": ["docker"],
+            "matchPackageNames": ["theasp/novnc"],
+            "schedule": ["quarterly"]
         }
     ]
 }
