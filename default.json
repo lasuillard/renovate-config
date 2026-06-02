@@ -3,20 +3,20 @@
     "extends": [
         "config:best-practices",
         "group:recommended",
-        "schedule:automergeWeekdays",
+        "schedule:officeHours",
+        "schedule:automergeOfficeHours",
         "helpers:pinGitHubActionDigestsToSemver"
     ],
     "timezone": "Asia/Seoul",
-    "schedule": [
-        //  In the middle of the month
-        "* 0-3 15 * *"
-    ],
     "platformAutomerge":  false,
     "automergeStrategy": "squash",
     "minimumReleaseAge": "14 days",
     "lockFileMaintenance": {
         "enabled": true,
-        "automerge": true
+        "automerge": true,
+        "schedule": [
+            "* 0-3 1 * *" // Monthly
+        ],
     },
     "packageRules": [
         {
@@ -26,7 +26,7 @@
         },
         {
             "groupName": "GitHub Actions",
-            "matchManagers": ["github-actions"],
+            "matchManagers": ["github-actions"]
         },
         {
             "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
