@@ -36,7 +36,9 @@
             // Suppress tagless (only latest) image update noise
             "matchDatasources": ["docker"],
             "matchPackageNames": ["theasp/novnc"],
-            "schedule": ["quarterly"]
+            "schedule": [
+                "* * 1 */3 *" // Quarterly
+            ]
         }
     ]
 }
