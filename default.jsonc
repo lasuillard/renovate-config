@@ -11,6 +11,7 @@
   "platformAutomerge": false,
   "automergeStrategy": "squash",
   "minimumReleaseAge": "14 days",
+  "addLabels": ["dependencies"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
