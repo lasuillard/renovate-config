@@ -1,0 +1,72 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
+  "extends": [
+    "config:best-practices",
+    "group:recommended",
+    "schedule:officeHours",
+    "schedule:automergeOfficeHours",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "timezone": "Asia/Seoul",
+  "platformAutomerge": false,
+  "automergeStrategy": "squash",
+  "minimumReleaseAge": "14 days",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": [
+      "* 0-3 1 * *" // Monthly
+    ]
+  },
+  "packageRules": [
+    {
+      // Group development dependencies
+      "groupName": "Dev Dependencies (non-major)",
+      "groupSlug": "dev-dependencies",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      // Group GitHub Actions updates
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions",
+      "matchManagers": [
+        "github-actions"
+      ]
+    },
+    {
+      // Automerge patches and pins
+      "matchUpdateTypes": [
+        "patch",
+        "pin",
+        "digest",
+        "pinDigest"
+      ],
+      "automerge": true
+    },
+    {
+      // Automerge trusted GitHub Actions
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "actions/*",
+        "astral-sh/setup-uv",
+        "aws-actions/*",
+        "docker/*",
+        "pnpm/action-setup"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
+  ]
+}
