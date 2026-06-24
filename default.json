@@ -45,7 +45,7 @@
         "pep621"
       ],
       "matchJsonata": [
-        "depGroup = 'dev'"
+        "managerData.depGroup = 'dev'"
       ],
       "matchUpdateTypes": [
         "minor",
