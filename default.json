@@ -27,7 +27,9 @@
       "groupName": "Dev Dependencies (non-major)",
       "groupSlug": "dev-dependencies",
       "matchDepTypes": [
-        "devDependencies"
+        "devDependencies",
+        "dev-dependencies",
+        "dev"
       ],
       "matchUpdateTypes": [
         "minor",
