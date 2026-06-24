@@ -38,6 +38,22 @@
       "automerge": true
     },
     {
+      // Group Python development dependencies (PEP 735 dependency-groups; uv)
+      "groupName": "Dev Dependencies (non-major)",
+      "groupSlug": "dev-dependencies",
+      "matchManagers": [
+        "pep621"
+      ],
+      "matchJsonata": [
+        "depGroup = 'dev'"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
       // Group GitHub Actions updates
       "groupName": "GitHub Actions",
       "groupSlug": "github-actions",
