@@ -7,6 +7,9 @@
     "schedule:automergeOfficeHours",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
+  "ignorePresets": [
+    "docker:pinDigests" // To override in package rules
+  ],
   "timezone": "Asia/Seoul",
   "platformAutomerge": false,
   "automergeStrategy": "squash",
@@ -22,6 +25,12 @@
     ]
   },
   "packageRules": [
+    {
+      "extends": [
+        "docker:pinDigests",
+        "schedule:monthly"
+      ]
+    },
     {
       // Group development dependencies
       "groupName": "Dev Dependencies (non-major)",
