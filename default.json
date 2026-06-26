@@ -3,7 +3,7 @@
   "extends": [
     "config:best-practices",
     "group:recommended",
-    "schedule:officeHours",
+    "schedule:weekly",
     "schedule:automergeOfficeHours",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
@@ -17,8 +17,8 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": [
-      "* 8-17 1 * *" // Office hours, every 1th day of the month
+    "extends": [
+      "schedule:monthly"
     ]
   },
   "packageRules": [
