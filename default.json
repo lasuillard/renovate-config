@@ -26,9 +26,12 @@
   },
   "packageRules": [
     {
-      "extends": [
-        "docker:pinDigests",
-        "schedule:monthly"
+      "matchDatasources": [
+        "docker"
+      ],
+      "pinDigests": true,
+      "schedule": [
+        "* 0-3 1 * *"
       ]
     },
     {
