@@ -18,10 +18,23 @@
     "dependencies"
   ],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": false,
     "automerge": true,
     "extends": [
       "schedule:monthly"
+    ]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "automerge": true,
+    "labels": [
+      "security"
+    ],
+    "schedule": [
+      "at any time"
+    ],
+    "automergeSchedule": [
+      "at any time"
     ]
   },
   "packageRules": [
