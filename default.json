@@ -87,9 +87,8 @@
       ]
     },
     {
-      // Automerge patches and pins
+      // Automerge pins and digests
       "matchUpdateTypes": [
-        "patch",
         "pin",
         "digest",
         "pinDigest"
