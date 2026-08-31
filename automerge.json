@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "platformAutomerge": false,
+  "automergeStrategy": "squash",
+  "minimumReleaseAge": "14 days",
+  "packageRules": [
+    {
+      // Automerge pins and digests
+      "matchUpdateTypes": [
+        "pin",
+        "digest",
+        "pinDigest"
+      ],
+      "automerge": true
+    },
+    {
+      // Automerge trusted GitHub Actions
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "actions/*",
+        "astral-sh/setup-uv",
+        "aws-actions/*",
+        "docker/*",
+        "pnpm/action-setup"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
+  ]
+}

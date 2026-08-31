@@ -3,27 +3,18 @@
   "extends": [
     "config:best-practices",
     "group:recommended",
-    "schedule:weekly",
-    "schedule:automergeOfficeHours",
-    "helpers:pinGitHubActionDigestsToSemver"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "./schedule.json",
+    "./groups.json",
+    "./automerge.json"
   ],
   "ignorePresets": [
     "docker:pinDigests" // To override in package rules
   ],
   "timezone": "Asia/Seoul",
-  "platformAutomerge": false,
-  "automergeStrategy": "squash",
-  "minimumReleaseAge": "14 days",
   "addLabels": [
     "dependencies"
   ],
-  "lockFileMaintenance": {
-    "enabled": false,
-    "automerge": true,
-    "extends": [
-      "schedule:monthly"
-    ]
-  },
   "vulnerabilityAlerts": {
     "enabled": true,
     "automerge": true,
@@ -36,82 +27,5 @@
     "automergeSchedule": [
       "at any time"
     ]
-  },
-  "packageRules": [
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "pinDigests": true,
-      "schedule": [
-        "* 0-3 1 * *"
-      ]
-    },
-    {
-      // Group development dependencies
-      "groupName": "Dev Dependencies (non-major)",
-      "groupSlug": "dev-dependencies",
-      "matchDepTypes": [
-        "devDependencies",
-        "dev-dependencies",
-        "dev"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true
-    },
-    {
-      // Group Python development dependencies (PEP 735 dependency-groups; uv)
-      "groupName": "Dev Dependencies (non-major)",
-      "groupSlug": "dev-dependencies",
-      "matchManagers": [
-        "pep621"
-      ],
-      "matchJsonata": [
-        "managerData.depGroup = 'dev'"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true
-    },
-    {
-      // Group GitHub Actions updates
-      "groupName": "GitHub Actions",
-      "groupSlug": "github-actions",
-      "matchManagers": [
-        "github-actions"
-      ]
-    },
-    {
-      // Automerge pins and digests
-      "matchUpdateTypes": [
-        "pin",
-        "digest",
-        "pinDigest"
-      ],
-      "automerge": true
-    },
-    {
-      // Automerge trusted GitHub Actions
-      "matchManagers": [
-        "github-actions"
-      ],
-      "matchPackageNames": [
-        "actions/*",
-        "astral-sh/setup-uv",
-        "aws-actions/*",
-        "docker/*",
-        "pnpm/action-setup"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true
-    }
-  ]
+  }
 }
