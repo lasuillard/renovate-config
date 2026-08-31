@@ -30,6 +30,34 @@
         "patch"
       ],
       "automerge": true
+    },
+    {
+      "description": "Automerge trusted Python dependencies",
+      "matchDatasources": [
+        "pypi"
+      ],
+      "matchPackageNames": [
+        "boto3"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "description": "Automerge trusted Node.js dependencies",
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchPackageNames": [
+        "svelte"
+      ],
+      "automerge": true
     }
   ]
 }
