@@ -33,7 +33,7 @@
       "automerge": true
     },
     {
-      // Group GitHub Actions updates
+      "description": "Group GitHub Actions updates",
       "groupName": "GitHub Actions",
       "groupSlug": "github-actions",
       "matchManagers": [
