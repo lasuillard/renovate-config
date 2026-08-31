@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      // Group development dependencies
+      "description": "Group development dependencies (non-major)",
       "groupName": "Dev Dependencies (non-major)",
       "groupSlug": "dev-dependencies",
       "matchDepTypes": [
@@ -17,7 +17,7 @@
       "automerge": true
     },
     {
-      // Group Python development dependencies (PEP 735 dependency-groups; uv)
+      "description": "Group Python development dependencies (PEP 735 dependency-groups; uv)",
       "groupName": "Dev Dependencies (non-major)",
       "groupSlug": "dev-dependencies",
       "matchManagers": [

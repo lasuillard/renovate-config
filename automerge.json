@@ -5,7 +5,7 @@
   "minimumReleaseAge": "14 days",
   "packageRules": [
     {
-      // Automerge pins and digests
+      "description": "Automerge pins and digests",
       "matchUpdateTypes": [
         "pin",
         "digest",
@@ -14,7 +14,7 @@
       "automerge": true
     },
     {
-      // Automerge trusted GitHub Actions
+      "description": "Automerge trusted GitHub Actions updates",
       "matchManagers": [
         "github-actions"
       ],
