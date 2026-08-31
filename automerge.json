@@ -37,7 +37,8 @@
         "pypi"
       ],
       "matchPackageNames": [
-        "boto3"
+        "boto3",
+        "django"
       ],
       "matchUpdateTypes": [
         "minor",
