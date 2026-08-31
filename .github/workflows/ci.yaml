@@ -27,5 +27,6 @@ jobs:
       - name: Validate Renovate config
         run: |
           nix shell .#renovate --command sh <<'EOF'
-          find . -type f -name '*.json' -not -path '*/.*' -exec renovate-config-validator --strict {} +
+          renovate-config-validator --strict default.json
+          find . -type f -name '*.json' -not -name 'default.json' -not -path '*/.*' -exec renovate-config-validator --strict --no-global {} +
           EOF
