@@ -17,14 +17,17 @@
       in
       {
         packages = {
+          # Tools used in CI/CD pipelines
           inherit (pkgs)
-            pre-commit
-            renovate
             ;
         };
 
         devShells.default = pkgs.mkShell {
-          packages = builtins.attrValues self.packages.${system};
+          packages = with pkgs; [
+            pre-commit
+            renovate
+          ];
+
           shellHook = ''
             pre-commit install
           '';
