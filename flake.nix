@@ -19,6 +19,7 @@
         packages = {
           # Tools used in CI/CD pipelines
           inherit (pkgs)
+            renovate
             ;
         };
 
