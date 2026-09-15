@@ -28,7 +28,7 @@
       "at any time"
     ]
   },
-  "npmrc": "allow-remote=true\n",
+  "npmrc": "allow-remote=all\n",
   "npmrcMerge": true,
   "ignoreScripts": true
 }
