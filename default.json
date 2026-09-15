@@ -27,5 +27,8 @@
     "automergeSchedule": [
       "at any time"
     ]
-  }
+  },
+  "npmrc": "allow-remote=true\n",
+  "npmrcMerge": true,
+  "ignoreScripts": true
 }
