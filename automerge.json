@@ -22,6 +22,7 @@
         "actions/*",
         "astral-sh/setup-uv",
         "aws-actions/*",
+        "codecov/codecov-action",
         "docker/*",
         "pnpm/action-setup"
       ],
@@ -38,7 +39,8 @@
       ],
       "matchPackageNames": [
         "boto3",
-        "django"
+        "django",
+        "ruff"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -56,7 +58,8 @@
         "patch"
       ],
       "matchPackageNames": [
-        "svelte"
+        "svelte",
+        "vite"
       ],
       "automerge": true
     }
