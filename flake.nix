@@ -27,6 +27,7 @@
           packages = with pkgs; [
             pre-commit
             renovate
+            just
           ];
 
           shellHook = ''
