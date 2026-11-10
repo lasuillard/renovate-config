@@ -11,6 +11,7 @@ update:
 
 alias up := update
 
+# Validate Renovate configuration files
 validate:
     renovate-config-validator --strict default.json
     find . -type f -name '*.json' -not -name 'default.json' -not -path '*/.*' -exec renovate-config-validator --strict --no-global {} +
