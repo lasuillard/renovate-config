@@ -12,6 +12,12 @@
     "docker:pinDigests" // To override in package rules
   ],
   "timezone": "Asia/Seoul",
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "updateNotScheduled": true,
+  "pre-commit": {
+    "enabled": false
+  },
   "addLabels": [
     "dependencies"
   ],

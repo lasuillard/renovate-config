@@ -39,6 +39,17 @@
       "matchManagers": [
         "github-actions"
       ]
+    },
+    {
+      "description": "Group Docker digest refreshes",
+      "groupName": "Docker Digests",
+      "groupSlug": "docker-digests",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ]
     }
   ]
 }

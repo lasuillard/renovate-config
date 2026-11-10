@@ -1,8 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "schedule:officeHours",
     "schedule:automergeOfficeHours"
+  ],
+  "schedule": [
+    "* 9-17 * * 1"
   ],
   "lockFileMaintenance": {
     "enabled": false, // Disabled in favor of exact pinning and digesting
@@ -12,6 +14,15 @@
     ]
   },
   "packageRules": [
+    {
+      "description": "Schedule pre-commit hook updates monthly",
+      "matchManagers": [
+        "pre-commit"
+      ],
+      "schedule": [
+        "* 9-17 1 * *"
+      ]
+    },
     {
       "description": "Pin Docker digests",
       "matchDatasources": [
