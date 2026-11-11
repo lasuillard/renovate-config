@@ -2,6 +2,71 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
+      "description": "Group Python runtime dependencies (non-major)",
+      "groupName": "Python Runtime (non-major)",
+      "groupSlug": "python-runtime",
+      "matchManagers": [
+        "pep621"
+      ],
+      "matchDatasources": [
+        "pypi"
+      ],
+      "matchDepTypes": [
+        "project.dependencies",
+        "project.optional-dependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Group Node.js runtime dependencies (non-major)",
+      "groupName": "Node Runtime (non-major)",
+      "groupSlug": "node-runtime",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Group Go module dependencies (non-major)",
+      "groupName": "Go Dependencies (non-major)",
+      "groupSlug": "go-dependencies",
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDatasources": [
+        "go"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Group Rust dependencies (non-major)",
+      "groupName": "Rust Dependencies (non-major)",
+      "groupSlug": "rust-dependencies",
+      "matchManagers": [
+        "cargo"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": false
+    },
+    {
       "description": "Group development dependencies (non-major)",
       "groupName": "Dev Dependencies (non-major)",
       "groupSlug": "dev-dependencies",
@@ -14,30 +79,46 @@
         "minor",
         "patch"
       ],
-      "automerge": true
+      "automerge": true,
+      "schedule": [
+        "* 9-17 1 * *"
+      ]
     },
     {
-      "description": "Group Python development dependencies (PEP 735 dependency-groups; uv)",
+      "description": "Group Python development and test dependency groups (PEP 735; uv)",
       "groupName": "Dev Dependencies (non-major)",
       "groupSlug": "dev-dependencies",
       "matchManagers": [
         "pep621"
       ],
       "matchJsonata": [
-        "managerData.depGroup = 'dev'"
+        "managerData.depGroup in ['dev', 'test', 'tests', 'lint', 'typing', 'typecheck']"
       ],
       "matchUpdateTypes": [
         "minor",
         "patch"
       ],
-      "automerge": true
+      "automerge": true,
+      "schedule": [
+        "* 9-17 1 * *"
+      ]
     },
     {
-      "description": "Group GitHub Actions updates",
+      "description": "Group GitHub Actions updates (non-major)",
       "groupName": "GitHub Actions",
       "groupSlug": "github-actions",
       "matchManagers": [
         "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest",
+        "pin",
+        "pinDigest"
+      ],
+      "schedule": [
+        "* 9-17 1 * *"
       ]
     },
     {

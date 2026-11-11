@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
   "extends": [
     "config:recommended",
-    "group:recommended",
     "helpers:pinGitHubActionDigestsToSemver",
     "./schedule.json",
     "./groups.json",
@@ -36,5 +35,17 @@
   },
   "npmrc": "allow-remote=all\n",
   "npmrcMerge": true,
-  "ignoreScripts": true
+  "ignoreScripts": true,
+  "packageRules": [
+    {
+      "description": "Defer TypeScript 7 until dependent tooling supports it; remove this rule to resume upgrades",
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "typescript"
+      ],
+      "allowedVersions": "<7"
+    }
+  ]
 }

@@ -14,7 +14,12 @@
       "automerge": true
     },
     {
-      "description": "Automerge trusted GitHub Actions updates",
+      "description": "Group and automerge trusted GitHub Actions updates",
+      "groupName": "Trusted GitHub Actions (non-major)",
+      "groupSlug": "trusted-github-actions",
+      "schedule": [
+        "* 9-17 1 * *"
+      ],
       "matchManagers": [
         "github-actions"
       ],
@@ -33,14 +38,21 @@
       "automerge": true
     },
     {
-      "description": "Automerge trusted Python dependencies",
+      "description": "Group and automerge trusted Python dependencies",
+      "groupName": "Trusted Python (non-major)",
+      "groupSlug": "trusted-python",
+      "schedule": [
+        "* 9-17 1 * *"
+      ],
       "matchDatasources": [
         "pypi"
       ],
       "matchPackageNames": [
         "boto3",
+        "botocore",
         "django",
-        "ruff"
+        "ruff",
+        "s3transfer"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -49,7 +61,12 @@
       "automerge": true
     },
     {
-      "description": "Automerge trusted Node.js dependencies",
+      "description": "Group and automerge trusted Node.js dependencies",
+      "groupName": "Trusted Node.js (non-major)",
+      "groupSlug": "trusted-node",
+      "schedule": [
+        "* 9-17 1 * *"
+      ],
       "matchDatasources": [
         "npm"
       ],
@@ -62,6 +79,16 @@
         "vite"
       ],
       "automerge": true
+    },
+    {
+      "description": "Approve major upgrades before creating separate PRs",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "groupName": null,
+      "groupSlug": null,
+      "dependencyDashboardApproval": true,
+      "automerge": false
     }
   ]
 }

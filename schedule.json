@@ -15,15 +15,6 @@
   },
   "packageRules": [
     {
-      "description": "Schedule pre-commit hook updates monthly",
-      "matchManagers": [
-        "pre-commit"
-      ],
-      "schedule": [
-        "* 9-17 1 * *"
-      ]
-    },
-    {
       "description": "Pin Docker digests",
       "matchDatasources": [
         "docker"
